@@ -67,8 +67,8 @@ export default {
     addEcharts: {
       //监听添加的数据
       handler(newValue) {
-        console.log(newValue);
-        this.addChartInfo = true;
+        // console.log(newValue);
+        this.addChartInfo = true; // 打开数据发生改变的开关
         for (var i = 0; i < newValue.length; i++) {
           this.sortArr.push(newValue[i]);
         }
@@ -135,8 +135,11 @@ export default {
     chartView() {
       var that = this;
       if (this.addChartInfo) {
+        // 触发数据改变的开关
         this.getParentInfo = [];
         this.$nextTick(() => {
+          console.log(this.getParentInfo);
+          console.log(this.sortArr);
           for (var i = 0; i < this.sortArr.length; i++) {
             this.getParentInfo.push(this.sortArr[i]);
           }
@@ -161,6 +164,8 @@ export default {
           });
         });
       } else {
+        console.log(this.getParentInfo);
+        console.log(this.sortArr);
         // 渲染echarts图表
         lineChart(this.lineChartArr);
         pieChart(this.pieChartArr);

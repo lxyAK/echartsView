@@ -14,7 +14,7 @@ export default {
     commit(mutationTypes.MUTATE_DEL_WHICH_ONE, payLoad);
   },
   async [types.GET_LINE_CHART_INFO]({ commit }, payLoad) {
-    console.log(payLoad);
+    // console.log(payLoad);
     let result = await nets.getlinechart(payLoad);
     if (result.success) {
       commit(mutationTypes.MUTATE_LINE_CHART, result.data);
