@@ -1,5 +1,5 @@
 <template>
-  <!-- 添加图表组件 -->
+  <!-- 添加图表组件1 -->
   <div class="navMenu">
     <el-button type="primary" plain @click="dialogTableVisible = true"
       >添加</el-button
